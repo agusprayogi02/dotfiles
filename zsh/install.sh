@@ -16,6 +16,7 @@ git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 
 echo_info "Symlink .zshrc..."
 ln -sfT "$HOME/dotfiles/zsh/zshrc" "$HOME/.zshrc"
+ln -sfT "$HOME/dotfiles/zsh/.profile" "$HOME/.profile"
 
 echo_info "Changing shell..."
 chsh -s "$(command -v zsh)"

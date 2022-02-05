@@ -6,8 +6,10 @@
 . ../helpers.sh
 
 echo_info "Configuring snap..."
-echo_info "Installing snap pkgs..."
 sudo apt install snapd
+echo_info "Installing snap core..."
+sudo snap install core
+echo_info "Installing snap pkgs..."
 
 PKGS=(
   breaktimer # Manage periodic breaks. Avoid eye-strain and RSI.
@@ -18,7 +20,7 @@ PKGS=(
   mutt # Mutt is a sophisticated text-based Mail User Agent.
   youtube-dl # Download videos from youtube.com or other video platforms.
   gitkraken # For repo management, in-app code editing & issue tracking.
-  docker # Docker container runtime.
+  # docker # Docker container runtime.
   robo3t-snap # Robo 3T (formerly Robomongo) is the free lightweight GUI for MongoDB enthusiasts.
 )
 
@@ -32,12 +34,30 @@ for pkg in "${PKGS[@]}"; do
   echo_done "${pkg} installed!"
 done
 
+echo_info "Configuring Docker..."
+sudo apt-get install ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+echo_info "Installing Docker..."
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+echo_info "trying Docker running..."
+sudo docker run hello-world
+
+echo_info "Installing Docker Compose..."
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
 CLASSIC_PKGS=(
-  cool-retro-term # cool-retro-term is a terminal emulator.
-  code # Visual Studio Code. Code editing. Redefined.
+  # cool-retro-term # cool-retro-term is a terminal emulator.
+  # code # Visual Studio Code. Code editing. Redefined.
   hollywood # fill your console with Hollywood melodrama technobabble.
-  heroku # CLI client for Heroku.
-  datagrip # IntelliJ-based IDE for databases and SQL
+  # heroku # CLI client for Heroku.
+  # datagrip # IntelliJ-based IDE for databases and SQL
 )
 
 for pkg in "${CLASSIC_PKGS[@]}"; do

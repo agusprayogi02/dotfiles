@@ -1,5 +1,8 @@
 [user]
-    name = Mahendra Choudhary
-    email = pikaatic@gmail.com
+	name = 'Agus Prayogi'
+	email = agus21apy@gmail.com
+	name = Agus
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
+[init]
+	defaultBranch = main
