@@ -2,9 +2,9 @@
 Host github.com-pika
    HostName github.com
    User git
-   IdentityFile ~/.ssh/id_rsa_personal
+   IdentityFile ~/.ssh/private_gh
 # Work account
 Host github.com-work
    HostName github.com
    User git
-   IdentityFile ~/.ssh/id_rsa_work
+   IdentityFile ~/.ssh/work_gh
