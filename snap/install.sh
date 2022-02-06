@@ -19,7 +19,6 @@ PKGS=(
   fkill # Fabulously kill processes. Cross-platform.
   mutt # Mutt is a sophisticated text-based Mail User Agent.
   youtube-dl # Download videos from youtube.com or other video platforms.
-  gitkraken # For repo management, in-app code editing & issue tracking.
   # docker # Docker container runtime.
   robo3t-snap # Robo 3T (formerly Robomongo) is the free lightweight GUI for MongoDB enthusiasts.
 )
@@ -55,9 +54,19 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+echo_info "Installing VSCode..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code
+
 CLASSIC_PKGS=(
   # cool-retro-term # cool-retro-term is a terminal emulator.
   # code # Visual Studio Code. Code editing. Redefined.
+  gitkraken # For repo management, in-app code editing & issue tracking.
   hollywood # fill your console with Hollywood melodrama technobabble.
   # heroku # CLI client for Heroku.
   # datagrip # IntelliJ-based IDE for databases and SQL
