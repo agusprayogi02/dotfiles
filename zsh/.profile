@@ -44,3 +44,6 @@ export XAMPP=/opt/lampp
 export PATH=$XAMPP:$PATH:$XAMPP/bin
 export PATH=$PATH:"$SSD2/Program Files/composer"
 export LinuxApp=$SSD2/LinuxApp
+export PATH=$PATH:$LinuxApp/apache-maven/bin
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$PATH:$JAVA_PATH/bin
