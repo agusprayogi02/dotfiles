@@ -86,3 +86,5 @@ fi
 if [ -f "$DOTFILES/zsh/.aliases" ]; then
 	source "$DOTFILES/zsh/.aliases"
 fi
+alias k=kubectl
+compdef __start_kubectl k
