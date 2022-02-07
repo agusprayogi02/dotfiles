@@ -6,6 +6,7 @@ alias v="nvim"
 alias vim="nvim"
 alias n="npm"
 alias r="ranger"
+alias cls="clear"
 
 alias pls=please
 
@@ -106,7 +107,9 @@ alias dsp="docker system prune"
 alias deit="docker exec -it"
 alias db="docker build"
 alias dcc="docker commit -c"
-alias de="docker exec" alias dbt="docker build --tag" alias dcp="docker container prune"
+alias de="docker exec" 
+alias dbt="docker build --tag" 
+alias dcp="docker container prune"
 alias dils="docker image ls"
 
 # Git
@@ -158,3 +161,8 @@ alias noi="sudo -g no-internet"
 
 # open spotify with no internet
 alias s="sudo -g no-internet spotify"
+
+# Xampp
+alias xampp="sudo lampp start"
+alias lampp="sudo lampp start"
+alias lstatus="sudo lampp status"

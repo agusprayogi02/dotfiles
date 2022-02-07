@@ -78,4 +78,4 @@ SPACESHIP_CHAR_SYMBOL="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 �
 
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-SPACESHIP_DIR_TRUNC='1' # show only last directory
+SPACESHIP_DIR_TRUNC='3' # show only last directory
