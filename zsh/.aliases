@@ -20,6 +20,7 @@ export PATH=$PATH:$LinuxApp/apache-maven/bin
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_PATH/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 
 # # configure `time` format

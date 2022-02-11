@@ -7,7 +7,7 @@
 
 echo_info "Configuring variety..."
 echo_info "Installing variety..."
-sudo apt install variety
+sudo apt-get install variety
 
 echo_info "Installing wallpapers..."
 git clone https://github.com/iampika/wallpapers ${HOME}/.wallpapers

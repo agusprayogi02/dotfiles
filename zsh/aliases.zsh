@@ -7,6 +7,7 @@ alias vim="nvim"
 alias n="npm"
 alias r="ranger"
 alias cls="clear"
+alias tlf="sudo tail -f"
 
 alias pls=please
 
@@ -164,5 +165,6 @@ alias s="sudo -g no-internet spotify"
 
 # Xampp
 alias xampp="sudo lampp start"
-alias lampp="sudo lampp start"
+alias lstart="sudo lampp start"
 alias lstatus="sudo lampp status"
+alias lsql="sudo lampp startmysql"

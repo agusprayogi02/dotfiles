@@ -36,4 +36,6 @@ export PKG=(
   uget
   mpv
   torbrowser-launcher
+  netstat-nat
+  net-tools
 )

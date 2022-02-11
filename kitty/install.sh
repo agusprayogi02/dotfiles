@@ -6,7 +6,7 @@
 . ../helpers.sh
 
 echo_info "Installing Kitty..."
-sudo apt install kitty
+sudo apt-get install kitty
 
 echo_info "Configuring Kitty..."
 mkdir -p ${HOME}/.config/kitty

@@ -12,7 +12,7 @@ echo_info "Configuring GIT..."
 mkdir -p ${HOME}/.git
 
 echo_info "Installing GIT..."
-sudo apt install git
+sudo apt-get install git
 
 git config --global user.name ${name}
 git config --global user.email ${email}

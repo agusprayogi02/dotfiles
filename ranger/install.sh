@@ -6,7 +6,7 @@
 . ../helpers.sh
 
 echo_info "Installing Ranger..."
-sudo apt install ranger
+sudo apt-get install ranger
 
 echo_info "Configuring Ranger..."
 echo_info "Symlink rc.conf..."
