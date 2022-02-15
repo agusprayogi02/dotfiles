@@ -168,3 +168,5 @@ alias xampp="sudo lampp start"
 alias lstart="sudo lampp start"
 alias lstatus="sudo lampp status"
 alias lsql="sudo lampp startmysql"
+
+alias fcam="$FakeCam && p fake.py -c ./config-example.ini"

@@ -21,6 +21,8 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_PATH/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
+export FVM_HOME=/media/agus/SSD2/src
+export FakeCam=/media/agus/HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
 
 
 # # configure `time` format
