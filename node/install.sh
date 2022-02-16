@@ -23,6 +23,7 @@ npm i -g imgur-uploader-cli
 npm i -g share-cli
 npm i -g prettier
 npm i -g eslint
+npm i -g nodemon
 # npm i --g brightness-cli
 
 nvm install node

@@ -38,4 +38,6 @@ export PKG=(
   torbrowser-launcher
   netstat-nat
   net-tools
+  openjdk-17-jdk-headless
+  openjdk-17-jre-headless
 )

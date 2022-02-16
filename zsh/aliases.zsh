@@ -153,6 +153,7 @@ alias tb="taskbook"
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
 alias mongo="sudo docker run --name mongodb -v /data/mongodb -d -p 27017:27017 bitnami/mongodb; dc start mongodb"
 alias redis="sudo docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
+alias mysql-docker="sudo mkdir /var/lib/mysql; sudo docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=root -v /var/lib/mysql:/var/lib/mysql -d -p 3306:6603 mysql; dc start mysql-docker"
 
 alias lst="lite-server"
 

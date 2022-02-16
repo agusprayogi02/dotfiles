@@ -1,5 +1,5 @@
 [user]
-	name = 'Agus Prayogi'
+	name = Agus
 	email = agus21apy@gmail.com
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
