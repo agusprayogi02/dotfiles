@@ -1,7 +1,7 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Postman
-Exec=postman
+Comment=Supercharge your API workflow
+Exec=/opt/Postman/Postman
 Icon=/opt/Postman/resources/app/assets/icon.png
 Terminal=false
 Type=Application
