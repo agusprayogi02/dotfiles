@@ -34,7 +34,6 @@ export PKG=(
   scrot
   hub
   uget
-  mpv
   torbrowser-launcher
   netstat-nat
   net-tools

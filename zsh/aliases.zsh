@@ -171,3 +171,11 @@ alias lstatus="sudo lampp status"
 alias lsql="sudo lampp startmysql"
 
 alias fcam="$FakeCam && p fake.py -c ./config-example.ini"
+
+# Alias Apt
+alias aptins="sudo apt-get install"
+alias aptup="sudo apt-get update"
+
+
+
+
