@@ -6,7 +6,6 @@ export PKG=(
   toilet
   lolcat
   figlet
-  transmission
   ffmpeg
   htop
   neofetch
@@ -31,12 +30,7 @@ export PKG=(
   fzf
   autojump
   httrack
-  scrot
   hub
-  uget
-  torbrowser-launcher
   netstat-nat
   net-tools
-  openjdk-17-jdk-headless
-  openjdk-17-jre-headless
 )

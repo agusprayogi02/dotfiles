@@ -5,12 +5,7 @@
 # shellcheck source=helpers.sh
 . ../helpers.sh
 
-echo_info "Configuring exa..."
-
-echo_info "Installing cargo..."
-sudo apt-get install cargo
-
 echo_info "Installing exa..."
-cargo install exa
+sudo apt-get install exa
 
 echo_done "exa configuration!"

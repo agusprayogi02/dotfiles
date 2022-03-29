@@ -1,7 +1,6 @@
 #!/bin/bash
 
 personal_email="agus21apy@gmail.com"
-work_email="2141720025@student.polinema.ac.id"
 
 # shellcheck source=distro.sh
 . ../distro.sh
@@ -18,18 +17,14 @@ cd ${HOME}/.ssh
 echo_info "Generating an RSA token for GitHub"
 echo_info "Personal - id_rsa_personal"
 ssh-keygen -t rsa -b 4096 -C ${personal_email}
-echo_info "Work - id_rsa_work"
-ssh-keygen -t rsa -b 4096 -C ${work_email}
 
 echo_info "Symlink config..."
 ln -sfT "$HOME/dotfiles/ssh/config" "$HOME/.ssh/config"
 ln -sfT "$HOME/dotfiles/ssh/gitconfig" "$HOME/.gitconfig"
-ln -sfT "$HOME/dotfiles/ssh/work-gitconfig" "$HOME/work/.gitconfig"
 
 echo_info "Add SSH key to your GitHub Account"
 echo_info "Copy id_rsa_personal.pub and id_rsa_work.pub and add to respective github account."
 echo_info "ssh -T github.com-agus"
-echo_info "ssh -T github.com-work"
 echo_info "Always clone repo by adding hostname in remote url"
 echo_info "e.g. git@github.com to git@github.com-agus"
 

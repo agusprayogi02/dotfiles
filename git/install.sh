@@ -14,7 +14,4 @@ mkdir -p ${HOME}/.git
 echo_info "Installing GIT..."
 sudo apt-get install git
 
-git config --global user.name ${name}
-git config --global user.email ${email}
-
 echo_done "GIT configuration!"
