@@ -23,7 +23,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 
 # Add the tangram gpg key. Ubuntu 20.04
-curl -fsSL https://pkgs.tangram.dev/stable/ubuntu/focal.gpg | sudo apt-key add -
+# curl -fsSL https://pkgs.tangram.dev/stable/ubuntu/focal.gpg | sudo apt-key add -
 
 # Sublime Text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -49,19 +49,19 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 echo_info "trying Docker running..."
 sudo docker run hello-world
 
-echo_info "Installing Docker Compose..."
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+# echo_info "Installing Docker Compose..."
+# sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# sudo chmod +x /usr/local/bin/docker-compose
+# sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 echo_info "Installing kubernetes..."
 sudo apt-get install -y kubectl
 
-echo_info "Installing tangram..."
+# echo_info "Installing tangram..."
 # Add the tangram repository.
-curl -fsSL https://pkgs.tangram.dev/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tangram.list
+# curl -fsSL https://pkgs.tangram.dev/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tangram.list
 # Install!
-sudo apt-get install tangram
+# sudo apt-get install tangram
 
 
 for pkg in "${PKGS[@]}"; do

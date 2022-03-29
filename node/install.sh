@@ -12,15 +12,15 @@ curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
 echo_info "Installing Node.js..."
 sudo apt-get install -y nodejs
 
-npm i -g add-gitignore
-npm i -g lite-server
-npm i -g surge
-npm i -g share-cli
-npm i -g prettier
-npm i -g eslint
-npm i -g nodemon
+sudo npm i -g add-gitignore
+sudo npm i -g lite-server
+sudo npm i -g surge
+sudo npm i -g share-cli
+sudo npm i -g prettier
+sudo npm i -g eslint
+sudo npm i -g nodemon
 # npm i --g brightness-cli
 
-nvm install node
+# nvm install node
 
 echo_done "Node configuration!"

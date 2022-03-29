@@ -15,7 +15,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/nvm
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
-  zgen oh-my-zsh plugins/copydir
+  zgen oh-my-zsh plugins/copypath
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load djui/alias-tips
@@ -33,25 +33,25 @@ if ! zgen saved; then
 fi
 
 # # Theme Options
-# SPACESHIP_PROMPT_ORDER=(
-#   time      # Time stamps section
-#   user      # Username section
-#   dir       # Current directory section
+SPACESHIP_PROMPT_ORDER=(
+  time      # Time stamps section
+  user      # Username section
+  dir       # Current directory section
 #   host      # Hostname section
-#   git       # Git section (git_branch + git_status)
+  git       # Git section (git_branch + git_status)
 #   # hg        # Mercurial section (hg_branch  + hg_status)
-#   package   # Package version
-#   node      # Node.js section
+  package   # Package version
+  node      # Node.js section
 #   # ruby      # Ruby section
 #   # elixir    # Elixir section
 #   # xcode     # Xcode section
 #   # swift     # Swift section
 #   # golang    # Go section
-#   php       # PHP section
+  php       # PHP section
 #   # rust      # Rust section
 #   # haskell   # Haskell Stack section
 #   # julia     # Julia section
-#   # docker    # Docker section
+  docker    # Docker section
 #   # aws       # Amazon Web Services section
 #   # venv      # virtualenv section
 #   # conda     # conda virtualenv section
@@ -66,8 +66,8 @@ fi
 #   # vi_mode   # Vi-mode indicator
 #   # jobs      # Background jobs indicator
 #   # exit_code # Exit code section
-#   char      # Prompt character
-# )
+  char      # Prompt character
+)
 function random_element() {
   declare -a array=("$@")
   r=$((RANDOM % ${#array[@]}))
