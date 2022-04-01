@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /tmp || exit
 echo "Downloading Postman ..."
-wget -q https://dl.pstmn.io/download/latest/linux?arch=64 -O postman.tar.gz
+wget -q https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
 tar -xzf postman.tar.gz
 rm postman.tar.gz
 

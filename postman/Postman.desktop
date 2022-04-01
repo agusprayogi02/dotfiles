@@ -2,7 +2,7 @@
 Name=Postman
 Comment=Supercharge your API workflow
 Exec=/opt/Postman/Postman
-Icon=/opt/Postman/resources/app/assets/icon.png
+Icon=/opt/Postman/app/resources/app/assets/icon.png
 Terminal=false
 Type=Application
 Categories=Development;
