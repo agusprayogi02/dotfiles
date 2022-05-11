@@ -11,6 +11,12 @@
 	directory = /media/agus/SSD1/ProjectKu/Flutter/doctor_app
 	directory = /media/agus/SSD1/ProjectKu/Flutter/apotek
 	directory = /media/agus/HDD1/Fonts/dotfiles-public
+	directory = /media/agus/SSD1/ProjectKu/Flutter/kmipn/sistor
+	directory = /media/agus/SSD1/ProjectKu/Kuliah/Semeter2/ASD2022
+	directory = /media/agus/SSD1/ProjectKu/NextJS/wakanda-landing-page
+	directory = /media/agus/SSD2/src/versions/master
+	directory = /media/agus/SSD1/ProjectKu/Api/manga-api
+	directory = /media/agus/HDD1/OS/Realme 3/bypass/mtkclient
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
@@ -57,7 +63,7 @@
 	tool = nvimdiff
 [difftool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

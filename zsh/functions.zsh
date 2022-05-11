@@ -125,3 +125,5 @@ gccd() {
 }
 
 alias gc="gccd"
+
+function mvn-exec(){ mvn compile exec:java -Dexec.mainClass="$1" }
