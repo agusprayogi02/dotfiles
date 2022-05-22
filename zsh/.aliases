@@ -21,7 +21,7 @@ export PATH=$PATH:$LinuxApp/netbeans-12.6/netbeans/bin
 export ANDROID_STUDIO=$LinuxApp/android-studio
 export PATH=$PATH:$ANDROID_STUDIO/bin
 
-export JAVA_HOME=/usr/lib/jvm/jdk-17
+export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
@@ -30,8 +30,9 @@ export FakeCam=$HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.local/bin
-
+export PATH=$PATH:$HOME/.local/share/genymotion
 
 # # configure `time` format
 # TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'

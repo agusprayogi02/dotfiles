@@ -108,3 +108,4 @@ unset fasd_cache
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
