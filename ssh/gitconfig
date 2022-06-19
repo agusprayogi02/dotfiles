@@ -17,6 +17,25 @@
 	directory = /media/agus/SSD2/src/versions/master
 	directory = /media/agus/SSD1/ProjectKu/Api/manga-api
 	directory = /media/agus/HDD1/OS/Realme 3/bypass/mtkclient
+	directory = /media/agus/SSD1/ProjectKu/Flutter/kmipn/sistor_kmipn
+	directory = /media/agus/SSD1/ProjectKu/Flutter/kmipn/sistor_kmipn
+	directory = /media/agus/SSD1/ProjectKu/Spring/work_api
+	directory = /media/agus/HDD1/OS/Realme 3/bypass/exploits_collection
+	directory = /media/agus/HDD1/OS/Realme 3/bypass/bypass_utility
+	directory = /media/agus/HDD1/Program/Linux/blanket
+	directory = /media/agus/SSD1/ProjectKu/Spring/spring-api
+	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/flutter-bloc-clean-architecture
+	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/getx
+	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/a199-flutter-expert-project
+	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/quipan
+	directory = /media/agus/SSD2/src/versions/beta
+	directory = /media/agus/SSD1/ProjectKu/godot/Platformer
+	directory = /media/agus/SSD1/ProjectKu/godot/nakama
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/sales-pos
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/sales_app
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/sales
+	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/ValkyrieApp
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/core-api
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
@@ -74,3 +93,5 @@
 	process = git-lfs filter-process
 [ghq]
 	root = ~/.ghq
+[http]
+	version = HTTP/2

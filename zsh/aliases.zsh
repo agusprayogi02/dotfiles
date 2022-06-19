@@ -188,3 +188,5 @@ alias cekStatus="curl -s -o /dev/null -w '%{http_code}'"
 
 # Aliases for java
 
+# Aliases for Composer
+alias composer7="php7 /usr/local/bin/composer"

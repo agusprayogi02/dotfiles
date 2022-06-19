@@ -1,5 +1,5 @@
 # Personal account - default config
-Host github.com-pika
+Host github.com-agus
    HostName github.com
    User git
    IdentityFile ~/.ssh/private_gh
