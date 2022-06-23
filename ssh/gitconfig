@@ -36,6 +36,8 @@
 	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/sales
 	directory = /media/agus/SSD1/ProjectKu/Flutter/Pembelajaran/ValkyrieApp
 	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/core-api
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/app-git/sales-pos
+	directory = /media/agus/SSD1/ProjectKu/Kolaborasi/BankJawaban/bankjawaban-backend
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
