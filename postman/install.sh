@@ -21,7 +21,7 @@ echo "Creating .desktop file..."
 if [ -e "/usr/share/applications/Postman.desktop" ];then
     sudo rm /usr/share/applications/Postman.desktop
 fi
-sudo cp Postman.desktop /usr/share/applications/Postman.desktop
+sudo cp ~/dotfiles/postman/Postman.desktop /usr/share/applications/Postman.desktop
 
 echo "Installation completed successfully."
 echo "You can use Postman!"

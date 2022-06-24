@@ -2,9 +2,9 @@
 Host github.com-agus
    HostName github.com
    User git
-   IdentityFile ~/.ssh/private_gh
+   IdentityFile ~/.ssh/gh_private
 # Work account
-Host github.com-work
-   HostName github.com
-   User git
-   IdentityFile ~/.ssh/work_gh
+# Host github.com-work
+#    HostName github.com
+#    User git
+#    IdentityFile ~/.ssh/work_gh
