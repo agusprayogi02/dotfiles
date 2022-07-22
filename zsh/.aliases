@@ -9,6 +9,8 @@ export ANDROID_SDK_ROOT=$SSD2/LINUX_AND_SDK
 export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/ndk/24.0.8215888:$PATH
+
 export FLUTTER_HOME=$SSD2/src/flutter
 export PATH=$FLUTTER_HOME/bin:$PATH
 export PATH=$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH
@@ -16,6 +18,8 @@ export XAMPP=/opt/lampp
 export PATH=$XAMPP:$PATH:$XAMPP/bin
 export PATH=$PATH:"$SSD2/Program Files/composer"
 export LinuxApp=$SSD2/LinuxApp
+export PATH=$PATH:$LinuxApp/apache-maven/bin
+export PATH=$PATH:$LinuxApp/blender
 export PATH=$PATH:$LinuxApp/apache-maven/bin
 export PATH=$PATH:$LinuxApp/netbeans-12.6/netbeans/bin
 export ANDROID_STUDIO=$LinuxApp/android-studio

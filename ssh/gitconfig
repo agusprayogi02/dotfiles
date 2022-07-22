@@ -38,6 +38,13 @@
 	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/core-api
 	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/app-git/sales-pos
 	directory = /media/agus/SSD1/ProjectKu/Kolaborasi/BankJawaban/bankjawaban-backend
+	directory = /media/agus/SSD1/ProjectKu/Kolaborasi/BankJawaban/bankjawaban
+	directory = /media/agus/SSD1/ProjectKu/Project-Kerja/admin-panel
+	directory = /media/agus/SSD1/ProjectKu/SMKCoding_Kanesa_Agus.git
+	directory = /media/agus/SSD1/ProjectKu/Project-Kanesa/Mobile
+	directory = /media/agus/SSD1/ProjectKu/Project-Kanesa/SchoolApp
+	directory = /media/agus/SSD1/ProjectKu/Android/Dicoding
+	directory = *
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim

@@ -13,6 +13,7 @@
 #   (_)___|___/_| |_|_|  \___|
 
 export DOTFILES="$HOME/dotfiles"
+eval "$(starship init zsh)"
 
 source $DOTFILES/zsh/plugins.zsh
 source $DOTFILES/zsh/aliases.zsh
@@ -79,9 +80,9 @@ setopt noflowcontrol
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export PATH="$(yarn global bin):$PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
