@@ -1,3 +1,5 @@
+[pull]
+    rebase = false
 [user]
 	name = Agus Prayogi
 	email = agus21apy@gmail.com

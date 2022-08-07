@@ -189,4 +189,9 @@ alias cekStatus="curl -s -o /dev/null -w '%{http_code}'"
 # Aliases for java
 
 # Aliases for Composer
-alias composer7="php7 /usr/local/bin/composer"
+alias composer81="php8.1 $(which composer)"
+alias composer80="php8.0 $(which composer)"
+alias composer74="php7.4 $(which composer)"
+
+# SSH
+alias my-ssh="ssh-add ~/.ssh/gh_private"

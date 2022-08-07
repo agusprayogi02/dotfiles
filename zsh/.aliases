@@ -1,5 +1,5 @@
 #Custom PATH
-export MEDIA=/mnt
+export MEDIA=/media/agus
 export SSD1=$MEDIA/SSD1
 export SSD2=$MEDIA/SSD2
 export HDD1=$MEDIA/HDD1
@@ -16,8 +16,9 @@ export PATH=$FLUTTER_HOME/bin:$PATH
 export PATH=$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH
 export XAMPP=/opt/lampp
 export PATH=$XAMPP:$PATH:$XAMPP/bin
-export PATH=$PATH:"$SSD2/Program Files/composer"
+# export PATH=$PATH:"$SSD2/Program Files/composer"
 export LinuxApp=$SSD2/LinuxApp
+export PATH=$PATH:$LinuxApp/composer
 export PATH=$PATH:$LinuxApp/apache-maven/bin
 export PATH=$PATH:$LinuxApp/blender
 export PATH=$PATH:$LinuxApp/apache-maven/bin
@@ -25,7 +26,9 @@ export PATH=$PATH:$LinuxApp/netbeans-12.6/netbeans/bin
 export ANDROID_STUDIO=$LinuxApp/android-studio
 export PATH=$PATH:$ANDROID_STUDIO/bin
 
-export JAVA_HOME=/usr/lib/jvm/default-runtime
+export PATH=$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts
+
+export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin

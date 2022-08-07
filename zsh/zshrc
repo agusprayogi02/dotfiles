@@ -15,6 +15,9 @@
 export DOTFILES="$HOME/dotfiles"
 eval "$(starship init zsh)"
 
+echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
+echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
+
 source $DOTFILES/zsh/plugins.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
