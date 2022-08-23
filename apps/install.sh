@@ -45,9 +45,9 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt-get update
 
 echo_info "Installing Docker..."
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+# sudo apt-get install docker-ce docker-ce-cli containerd.io
 echo_info "trying Docker running..."
-sudo docker run hello-world
+# sudo docker run hello-world
 
 # echo_info "Installing Docker Compose..."
 # sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -55,7 +55,7 @@ sudo docker run hello-world
 # sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 echo_info "Installing kubernetes..."
-sudo apt-get install -y kubectl
+# sudo apt-get install -y kubectl
 
 # echo_info "Installing tangram..."
 # Add the tangram repository.

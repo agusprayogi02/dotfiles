@@ -16,7 +16,7 @@ cd ${HOME}/.ssh
 # https://devconnected.com/how-to-setup-ssh-keys-on-github/
 echo_info "Generating an RSA token for GitHub"
 echo_info "Personal - id_rsa_personal"
-ssh-keygen -t rsa -b 4096 -C ${personal_email}
+# ssh-keygen -t rsa -b 4096 -C ${personal_email}
 
 echo_info "Symlink config..."
 ln -sfT "$HOME/dotfiles/ssh/config" "$HOME/.ssh/config"

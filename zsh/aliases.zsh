@@ -183,6 +183,7 @@ alias fcam="$FakeCam && p fake.py -c ./config-example.ini"
 # Alias Apt
 alias aptins="sudo apt-get install"
 alias aptup="sudo apt-get update"
+alias apt="sudo nala"
 
 alias cekStatus="curl -s -o /dev/null -w '%{http_code}'"
 

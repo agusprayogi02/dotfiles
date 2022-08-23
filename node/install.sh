@@ -7,7 +7,7 @@
 
 echo_info "Configuring Node..."
 echo_info "Installing nvm..."
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 
 echo_info "Installing Node.js..."
 sudo apt-get install -y nodejs
