@@ -51,6 +51,7 @@
 	excludesfile = ~/.gitignore
 	editor = nvim
 	ignorecase = false
+	autocrlf = input
 [push]
 	default = simple
 [color]

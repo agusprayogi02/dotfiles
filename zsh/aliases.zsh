@@ -10,6 +10,7 @@ alias cls="clear"
 alias tlf="sudo tail -f"
 
 alias pls=please
+alias pn=pnpm
 
 alias mk=make
 alias mkc="make clean"
@@ -97,29 +98,29 @@ alias ...="cd ../../.."
 alias ....="cd ../../../.."
 
 # Docker
-alias d="sudo docker"
-alias dr="sudo docker run"
-alias drrm="sudo docker run --rm"
-alias drit="sudo docker run -it"
-alias dritrm="sudo docker run -it --rm"
-alias dritirm="sudo docker run -it --init --rm"
-alias dritrmn="sudo docker run -it --rm --name"
-alias dc="sudo docker container"
-alias ds="sudo docker start"
-alias dl="sudo docker logs"
-alias dsa="sudo docker start -a"
-alias dps="sudo docker ps"
-alias dpsa="sudo docker ps --all"
-alias dst="sudo docker stop"
-alias dk="sudo docker kill"
-alias dsp="sudo docker system prune"
-alias deit="sudo docker exec -it"
-alias db="sudo docker build"
-alias dcc="sudo docker commit -c"
-alias de="sudo docker exec" 
-alias dbt="sudo docker build --tag" 
-alias dcp="sudo docker container prune"
-alias dils="sudo docker image ls"
+alias d="docker"
+alias dr="docker run"
+alias drrm="docker run --rm"
+alias drit="docker run -it"
+alias dritrm="docker run -it --rm"
+alias dritirm="docker run -it --init --rm"
+alias dritrmn="docker run -it --rm --name"
+alias dc="docker container"
+alias ds="docker start"
+alias dl="docker logs"
+alias dsa="docker start -a"
+alias dps="docker ps"
+alias dpsa="docker ps --all"
+alias dst="docker stop"
+alias dk="docker kill"
+alias dsp="docker system prune"
+alias deit="docker exec -it"
+alias db="docker build"
+alias dcc="docker commit -c"
+alias de="docker exec" 
+alias dbt="docker build --tag" 
+alias dcp="docker container prune"
+alias dils="docker image ls"
 
 # Git
 alias git="hub"
@@ -159,9 +160,13 @@ alias notes="vim ~/.notes.txt"
 alias tb="taskbook"
 
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
-alias mongo="sudo docker run --name mongodb -v /data/mongodb -d -p 27017:27017 bitnami/mongodb; dc start mongodb"
-alias redis="sudo docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
-alias mysql-docker="sudo mkdir /var/lib/mysql; sudo docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=root -v /var/lib/mysql:/var/lib/mysql -d -p 3306:6603 mysql; dc start mysql-docker"
+alias mongo="docker run --name mongodb -v mongo-data:/data/mongodb -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=yogi -e MONGO_INITDB_ROOT_PASSWORD=admin123 bitnami/mongodb; dc start mongodb"
+alias redis-docker="docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
+alias mysql-docker="mkdir /var/lib/mysql; sudo docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=admin123 -v /var/lib/mysql:/var/lib/mysql -d -p 3306:6603 mysql; dc start mysql-docker"
+alias sql-server-docker="docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Akubisa-1' \
+   -p 1433:1433 --name sqlServer1 --hostname sqlServer1 \
+   -v sqlServer:/data -d\
+   mcr.microsoft.com/mssql/server:2022-latest"
 
 alias lst="lite-server"
 
