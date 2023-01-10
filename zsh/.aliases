@@ -10,8 +10,12 @@ export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID_HOME/emulator:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/ndk/24.0.8215888:$PATH
+export PATH=$HOME/.dotnet/tools:$PATH
 
 export FLUTTER_HOME=$SSD2/src/flutter
+export RUSTUP_HOME=$HOME/.rustup
+export CARGO_HOME=$HOME/.cargo
+
 export PATH=$FLUTTER_HOME/bin:$PATH
 export PATH=$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH
 export XAMPP=/opt/lampp
@@ -39,6 +43,8 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.local/share/genymotion
+export PATH="$(yarn global bin):$PATH"
+export PATH=~/.npm-global/bin:$PATH
 
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32

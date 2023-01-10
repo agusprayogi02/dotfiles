@@ -160,7 +160,7 @@ alias notes="vim ~/.notes.txt"
 alias tb="taskbook"
 
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
-alias mongo="docker run --name mongodb -v mongo-data:/data/mongodb -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=yogi -e MONGO_INITDB_ROOT_PASSWORD=admin123 bitnami/mongodb; dc start mongodb"
+alias mongo="docker run --name mongodb -v mongo-data:/data/mongodb -d -p 27017:27017 -e MONGODB_ROOT_PASSWORD=admin123 bitnami/mongodb; dc start mongodb"
 alias redis-docker="docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
 alias mysql-docker="mkdir /var/lib/mysql; sudo docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=admin123 -v /var/lib/mysql:/var/lib/mysql -d -p 3306:6603 mysql; dc start mysql-docker"
 alias sql-server-docker="docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Akubisa-1' \
