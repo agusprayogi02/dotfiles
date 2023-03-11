@@ -21,12 +21,15 @@ echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 source $DOTFILES/zsh/plugins.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
+source $HOME/.zshenv
 
 # Vim for life
 export EDITOR=vim
 
 ENABLE_CORRECTION="true"
 export LANG=en_US.UTF-8
+### "nvim" as manpager
+export MANPAGER="nvim -c 'set ft=man'"
 
 # history
 SAVEHIST=100000
@@ -121,3 +124,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PNPM_HOME="/home/agus/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/agus/.dart-cli-completion/zsh-config.zsh ]] && source /home/agus/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

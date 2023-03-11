@@ -53,6 +53,9 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias lsize='du -sh * | sort -h' # show size of current folder
+alias ls.='du -sh .'
+alias lsizea='du -ah .' # show size of all files and folders
 
 
 alias cp="cp -i" # confirm before overwriting something
@@ -63,6 +66,7 @@ alias pg="echo 'Pinging Google' && ping www.google.com"
 
 alias vz="vim ~/.zshrc"
 alias vza="vim ~/dotfiles/zsh/aliases.zsh"
+alias vza.="vim ~/dotfiles/zsh/.aliases"
 alias vzp="vim ~/dotfiles/zsh/plugins.zsh"
 alias vzf="vim ~/dotfiles/zsh/functions.zsh"
 alias vn="vim ~/.config/nvim/init.vim"
@@ -126,6 +130,7 @@ alias dils="docker image ls"
 alias git="hub"
 alias gs="git status"
 alias agi="add-gitignore"
+alias lg="lazygit"
 
 # Heroku
 alias gphm="git push heroku master"
@@ -200,4 +205,4 @@ alias composer80="php8.0 $(which composer)"
 alias composer74="php7.4 $(which composer)"
 
 # SSH
-alias my-ssh="ssh-add ~/.ssh/gh_private"
+alias my-ssh="ssh-add ~/.ssh/gh_private && cls"

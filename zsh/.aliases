@@ -20,6 +20,7 @@ export PATH=$FLUTTER_HOME/bin:$PATH
 export PATH=$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH
 export XAMPP=/opt/lampp
 export PATH=$XAMPP:$PATH:$XAMPP/bin
+export PATH=~/julia-1.8.5/bin:$PATH
 # export PATH=$PATH:"$SSD2/Program Files/composer"
 export LinuxApp=$SSD2/LinuxApp
 export PATH=$PATH:$LinuxApp/composer
@@ -31,7 +32,7 @@ export PATH=$PATH:$LinuxApp/NetBeans-14/netbeans/bin
 
 export PATH=$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts
 
-export JAVA_HOME=/usr/lib/jvm/java-19-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
@@ -48,6 +49,7 @@ export PATH=~/.npm-global/bin:$PATH
 
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32
+export OPENAI_API_KEY=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
 
 
 # # configure `time` format
