@@ -203,6 +203,7 @@ alias cekStatus="curl -s -o /dev/null -w '%{http_code}'"
 alias composer81="php8.1 $(which composer)"
 alias composer80="php8.0 $(which composer)"
 alias composer74="php7.4 $(which composer)"
+alias ars="php artisan"
 
 # SSH
 alias my-ssh="ssh-add ~/.ssh/gh_private && cls"
