@@ -1,5 +1,5 @@
 #Custom PATH
-export MEDIA=/media/agus
+export MEDIA=/run/media/agus
 export SSD1=$MEDIA/SSD1
 export SSD2=$MEDIA/SSD2
 export HDD1=$MEDIA/HDD1
@@ -32,7 +32,7 @@ export PATH=$PATH:$LinuxApp/NetBeans-14/netbeans/bin
 
 export PATH=$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/default
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
@@ -46,6 +46,8 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HDD1/Program/genymotion
 export PATH="$(yarn global bin):$PATH"
 export PATH=~/.npm-global/bin:$PATH
+
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32

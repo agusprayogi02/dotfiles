@@ -17,6 +17,9 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
   zgen oh-my-zsh plugins/copypath
+  # ssh start
+  zgen load bobsoppe/zsh-ssh-agent
+  # end
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load djui/alias-tips
@@ -26,9 +29,9 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-completions src
 
   # theme
-  # zgen load romkatv/powerlevel10k powerlevel10k
-  # zgen oh-my-zsh themes/duellj
-  # zgen load denysdovhan/spaceship-prompt spaceship
+#   zgen load romkatv/powerlevel10k powerlevel10k
+#   zgen oh-my-zsh themes/duellj
+#   zgen load denysdovhan/spaceship-prompt spaceship
 
   # save all to init script
   zgen save
