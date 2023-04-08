@@ -51,7 +51,6 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32
-export OPENAI_API_KEY=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
 
 
 # # configure `time` format

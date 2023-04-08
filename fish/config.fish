@@ -110,6 +110,10 @@ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listi
 alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 alias ip='ip -color'
 
+# Aliases loaded
+source ~/.config/fish/completions/aliases.fish
+source ~/.config/fish/completions/function.fish
+
 # Replace some more things with better alternatives
 alias cat='bat --style header --style snip --style changes --style header'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
@@ -155,16 +159,14 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-# Aliases loaded
-source ~/.config/fish/completions/aliases.fish
-
 ## Run fastfetch if session is interactive
 if status --is-interactive && type -q fastfetch
    fastfetch --load-config dr460nized
 end
 
-# Jump Shell
-jump shell fish | source
+# # Jump Shell
+# jump shell fish | source
+eval (fasd --init fish)
 
 # ssh initial
 ssh_agent_init

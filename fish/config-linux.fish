@@ -1,46 +1,53 @@
-if type -q exa
-  alias ll "exa -l -g --icons"
-  alias lla "ll -a"
-end
-
 #Custom PATH
-set -gx MEDIA /run/media/agus
-set -gx SSD1 $MEDIA/SSD1
-set -gx SSD2 $MEDIA/SSD2
-set -gx HDD1 $MEDIA/HDD1
-set -gx HDD2 $MEDIA/HDD2
-set -gx PROKU $SSD1/ProjectKu
-set -gx ANDROID_SDK_ROOT $SSD2/LINUX_AND_SDK
-set -gx PATH $ANDROID_SDK_ROOT/cmdline-tools/latest/bin $PATH
-set -gx PATH $ANDROID_SDK_ROOT/emulator $PATH
-set -gx PATH $ANDROID_SDK_ROOT/platform-tools $PATH
-set -gx FLUTTER_HOME $SSD2/src/flutter
-set -gx PATH $FLUTTER_HOME/bin $PATH
-set -gx PATH $FLUTTER_HOME/bin/cache/dart-sdk/bin $PATH
-set -gx XAMPP /opt/lampp
-set -gx PATH $XAMPP/bin $PATH
-set -gx PATH "$SSD2/Program Files/composer" $PATH
-set -gx LinuxApp $SSD2/LinuxApp
-set -gx PATH $LinuxApp/apache-maven/bin $PATH 
-set -gx PATH $LinuxApp/Godot-Mono $PATH
-set -gx PATH $LinuxApp/postgrest $PATH
-set -gx PATH $LinuxApp/blender $PATH
-set -gx PATH $LinuxApp/netbeans-12.6/netbeans/bin $PATH 
-set -gx ANDROID_STUDIO $LinuxApp/android-studio
-set -gx PATH $ANDROID_STUDIO/bin $PATH 
-set -gx PATH $HDD1/Program/genymotion $PATH
+set -x MEDIA /run/media/agus
+set -x SSD1 $MEDIA/SSD1
+set -x SSD2 $MEDIA/SSD2
+set -x HDD1 $MEDIA/HDD1
+set -x HDD2 $MEDIA/HDD2
+set -x PROKU $SSD1/ProjectKu
+set -x ANDROID_HOME $SSD2/LINUX_AND_SDK
+set -x PATH $ANDROID_HOME/cmdline-tools/latest/bin $PATH
+set -x PATH $ANDROID_HOME/emulator $PATH
+set -x PATH $ANDROID_HOME/platform-tools $PATH
+set -x PATH $ANDROID_HOME/ndk/24.0.8215888 $PATH
+set -x PATH $HOME/.dotnet/tools $PATH
 
-set -gx JAVA_HOME /usr/lib/jvm/default
-set -gx PATH $JAVA_HOME/bin $PATH
-set -gx PATH $HOME/.pub-cache/bin $PATH
-set -gx PATH $HOME/.config/composer/vendor/bin $PATH
-set -gx FVM_HOME $SSD2/src
-set -gx FakeCam $HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
-set -gx GOROOT /usr/lib/go
-set -gx GOPATH $HOME/go
-set -gx PATH $GOROOT/bin $PATH
-set -gx PATH $GOPATH/bin $PATH
-set -gx PATH $HOME/.local/bin $PATH
-set -gx PATH $HOME/.local/share/genymotion $PATH
+set -x FLUTTER_HOME $SSD2/src/flutter
+set -x RUSTUP_HOME $HOME/.rustup
+set -x CARGO_HOME $HOME/.cargo
 
-set -gx CHROME_EXECUTABLE /opt/google/chrome/google-chrome
+set -x PATH $FLUTTER_HOME/bin $PATH
+set -x PATH $FLUTTER_HOME/bin/cache/dart-sdk/bin $PATH
+set -x XAMPP /opt/lampp
+set -x PATH $XAMPP $PATH $XAMPP/bin
+set -x PATH ~/julia-1.8.5/bin $PATH
+# set -x PATH $PATH "$SSD2/Program Files/composer"
+set -x LinuxApp $SSD2/LinuxApp
+set -x PATH $PATH $LinuxApp/composer
+set -x PATH $PATH $LinuxApp/apache-maven/bin
+set -x PATH $PATH $LinuxApp/blender
+set -x PATH $PATH $LinuxApp/NetBeans-14/netbeans/bin
+# set -x ANDROID_STUDIO $LinuxApp/android-studio
+# set -x PATH $PATH $ANDROID_STUDIO/bin
+
+set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
+
+set -x JAVA_HOME /usr/lib/jvm/default
+set -x PATH $PATH $JAVA_HOME/bin
+set -x PATH $PATH $HOME/.pub-cache/bin
+set -x PATH $PATH $HOME/.config/composer/vendor/bin
+set -x FVM_HOME $SSD2/src
+set -x FakeCam $HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
+set -x GOROOT /usr/local/go
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOROOT/bin
+set -x PATH $PATH $GOPATH/bin
+set -x PATH $PATH $HOME/.local/bin
+set -x PATH $PATH $HDD1/Program/genymotion
+set -x PATH (yarn global bin) $PATH
+set -x PATH ~/.npm-global/bin $PATH
+
+set -x CHROME_EXECUTABLE /usr/bin/google-chrome-stable
+
+set -x WINEARCH win32
+set -x WINEPREFIX ~/.wine32
