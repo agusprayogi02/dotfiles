@@ -51,3 +51,4 @@ set -x CHROME_EXECUTABLE /usr/bin/google-chrome-stable
 
 set -x WINEARCH win32
 set -x WINEPREFIX ~/.wine32
+set -x JUPYTER_RUNTIME_DIR /tmp
