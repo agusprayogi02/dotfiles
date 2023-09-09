@@ -1,5 +1,5 @@
 #Custom PATH
-export MEDIA=/mnt/
+export MEDIA=/media/agus
 export SSD1=$MEDIA/SSD1
 export SSD2=$MEDIA/SSD2
 export HDD1=$MEDIA/HDD1

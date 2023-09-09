@@ -100,7 +100,7 @@ fi
 alias k=kubectl
 compdef __start_kubectl k
 
-fasd_cache="$HOME/.fasd-init-bash"
+export fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
 fi
@@ -121,7 +121,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # pnpm
-export PNPM_HOME="/home/agus/.local/share/pnpm"
+export PNPM_HOME="$SSD2/.pnpm-store"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 ## [Completion] 

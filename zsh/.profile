@@ -27,4 +27,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-source "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo" ] ; then
+    source "$HOME/.cargo/env"
+fi
