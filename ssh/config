@@ -1,14 +1,18 @@
 # Personal account - default config
 Host github.com-agus
-   HostName github.com
-   User git
-   IdentityFile ~/.ssh/gh_private
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
 
 Host gitlab.com-agus
-   HostName gitlab.com
-   User git
-   IdentityFile ~/.ssh/gh_private
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
 
+Host dev.azure.com-agus
+  HostName ssh.dev.azure.com
+  User git
+  IdentityFile ~/.ssh/dev_rsa
 # Work account
 # Host github.com-work
 #    HostName github.com
