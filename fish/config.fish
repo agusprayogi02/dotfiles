@@ -8,7 +8,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 source ~/.config/fish/config-linux.fish
 
 # config functions
-source ~/.config/fish/functions/function-ssh.fish
+source ~/.config/fish/function.fish
 
 ## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
@@ -43,12 +43,12 @@ end
 
 ## Starship prompt
 if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+   source ("starship" init fish --print-full-init | psub)
 end
 
 
 ## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
+# source /usr/share/doc/find-the-command/ftc.fish
 
 
 ## Functions
@@ -166,7 +166,7 @@ end
 
 # # Jump Shell
 # jump shell fish | source
-eval (fasd --init fish)
+# eval (fasd --init fish)
 
 # ssh initial
-ssh_agent_init
+# ssh_agent_init
