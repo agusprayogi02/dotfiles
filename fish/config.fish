@@ -164,9 +164,12 @@ if status --is-interactive && type -q fastfetch
    fastfetch --load-config dr460nized
 end
 
+
 # # Jump Shell
 # jump shell fish | source
+zoxide init fish | source
 # eval (fasd --init fish)
 
 # ssh initial
 # ssh_agent_init
+fnm env | source

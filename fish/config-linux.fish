@@ -15,8 +15,11 @@ set -x PATH $HOME/.dotnet/tools $PATH
 set -x FLUTTER_HOME $SSD2/src/flutter
 set -x RUSTUP_HOME $HOME/.rustup
 set -x CARGO_HOME $HOME/.cargo
+set -x PATH $CARGO_HOME/bin $PATH
 
 set -x PATH $FLUTTER_HOME/bin $PATH
+set -x PATH $FLUTTER_HOME/dev $PATH
+set -x PATH $FLUTTER_HOME/packages $PATH
 set -x PATH $FLUTTER_HOME/bin/cache/dart-sdk/bin $PATH
 set -x XAMPP /opt/lampp
 set -x PATH $XAMPP $PATH $XAMPP/bin
@@ -31,18 +34,18 @@ set -x PATH $PATH $LinuxApp/composer
 set -x PATH $PATH $LinuxApp/apache-maven/bin
 set -x PATH $PATH $LinuxApp/blender
 set -x PATH $PATH $LinuxApp/NetBeans-14/netbeans/bin
-# set -x ANDROID_STUDIO $LinuxApp/android-studio
-# set -x PATH $PATH $ANDROID_STUDIO/bin
+set -x ANDROID_STUDIO /home/agus/.local/share/JetBrains/Toolbox/apps/android-studio
+set -x PATH $PATH $ANDROID_STUDIO/bin
 
 set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
 
-set -x JAVA_HOME /usr/lib/jvm/jre-openjdk
+set -x JAVA_HOME /usr/lib/jvm/java-17
 set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH $HOME/.pub-cache/bin
 set -x PATH $PATH $HOME/.composer/vendor/bin
-set -x FVM_HOME $SSD2/src
+set -x FVM_CACHE_PATH $SSD2/src
 set -x FakeCam $HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
-set -x GOROOT /usr/local/go
+set -x GOROOT /usr/lib/golang
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOROOT/bin
 set -x PATH $PATH $GOPATH/bin
@@ -58,3 +61,4 @@ set -x WINEPREFIX ~/.wine32
 set -x JUPYTER_RUNTIME_DIR /tmp
 
 set -x PATH $PATH $HOME/.bun/bin
+set -x PATH $HOME/.local/share/fnm $PATH
