@@ -39,13 +39,14 @@ set -x PATH $PATH $ANDROID_STUDIO/bin
 
 set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
 
-set -x JAVA_HOME /usr/lib/jvm/java-17
+set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH $HOME/.pub-cache/bin
-set -x PATH $PATH $HOME/.composer/vendor/bin
+set -x PATH $PATH $HOME/.config/composer/vendor/bin
 set -x FVM_CACHE_PATH $SSD2/src
 set -x FakeCam $HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
-set -x GOROOT /usr/lib/golang
+
+set -x GOROOT /usr/local/go
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOROOT/bin
 set -x PATH $PATH $GOPATH/bin

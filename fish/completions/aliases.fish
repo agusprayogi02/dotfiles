@@ -63,9 +63,11 @@ alias cp="cp -i" # confirm before overwriting something
 alias df='df -h' # human-readable sizes
 alias grep='grep --colour=auto'
 
-alias pg="echo 'Pinging Google' && ping www.google.com"
+alias pgo="echo 'Pinging Google' && ping www.google.com"
 
 alias vz="vim ~/.zshrc"
+alias vfish="vim ~/.config/fish/config.fish"
+alias vfisha="vim ~/.config/fish/completions/aliases.fish"
 alias vza="vim ~/dotfiles/zsh/aliases.zsh"
 alias vza.="vim ~/dotfiles/zsh/.aliases"
 alias vzp="vim ~/dotfiles/zsh/plugins.zsh"
@@ -97,10 +99,11 @@ alias iu="imgur-uploader"
 
 # Easier directory navigation.
 # alias ~="cd ~"
-alias .="cd .."
-alias ..="cd ../.."
-alias ...="cd ../../.."
-alias ....="cd ../../../.."
+# alias .="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # Docker
 alias d="docker"
@@ -126,6 +129,7 @@ alias de="docker exec"
 alias dbt="docker build --tag"
 alias dcp="docker container prune"
 alias dils="docker image ls"
+alias drs="sudo systemctl start docker"
 
 # Git
 alias git="hub"
@@ -169,10 +173,10 @@ alias tb="taskbook"
 alias mongo="docker run --name mongodb -v mongo-data:/data/mongodb -d -p 27017:27017 -e MONGODB_ROOT_PASSWORD=admin123 bitnami/mongodb; dc start mongodb"
 alias redis-docker="docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
 alias mysql-docker="mkdir /var/lib/mysql; sudo docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=admin123 -v /var/lib/mysql:/var/lib/mysql -d -p 3306:6603 mysql; dc start mysql-docker"
-alias sql-server-docker2017="docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Akubisa-1' \
-   -e 'MSSQL_AGENT_ENABLED=True' -p 1433:1433 --name sqlServer2017 --hostname sqlServer2017 \
-   -v sqlServer2017:/data -v ~/mssql:/var/agus:z -d\
-   mcr.microsoft.com/mssql/server:2017-latest"
+alias sql-server-docker2019="docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Akubisa-1' \
+   -e 'MSSQL_AGENT_ENABLED=True' -p 1433:1433 --name sqlServer2019 --hostname sqlServer2019 \
+   -v sqlServer2019:/data -v ~/mssql:/var/agus:z -d\
+   mcr.microsoft.com/mssql/server:2019-latest"
 
 alias lst="lite-server"
 
@@ -201,6 +205,7 @@ alias cekStatus="curl -s -o /dev/null -w '%{http_code}'"
 # Aliases for java
 
 # Aliases for Composer
+alias composer82="php8.2 $(which composer)"
 alias composer81="php8.1 $(which composer)"
 alias composer80="php8.0 $(which composer)"
 alias composer74="php7.4 $(which composer)"
