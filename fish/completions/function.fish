@@ -17,10 +17,16 @@ function gus
         switch $os
             case "Ubuntu"
             	if command -sq nala
-    		    set pm "nala"
-		else
-		    set pm "apt"
-		end
+                    set pm "nala"
+                else
+                    set pm "apt"
+                end
+            case "KDE neon"
+            	if command -sq nala
+                    set pm "nala"
+                else
+                    set pm "apt"
+                end
             case "Debian"
                 set pm "apt"
             case "Fedora"
