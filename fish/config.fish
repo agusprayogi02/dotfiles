@@ -172,4 +172,7 @@ zoxide init fish | source
 
 # ssh initial
 # ssh_agent_init
-fnm env | source
+# fnm env | source
+
+# FVM
+set --export PATH /home/agus/.fvm_flutter/bin $PATH

@@ -5,14 +5,14 @@ set -x SSD2 $MEDIA/Data
 set -x HDD1 $MEDIA/HDD1
 set -x HDD2 $MEDIA/HDD2
 set -x PROKU $SSD1/ProjectKu
-set -x ANDROID_HOME $SSD2/ANDROID_HOME/Linux
+set -x ANDROID_HOME $SSD2/AndroidSdk/Linux
 set -x PATH $ANDROID_HOME/cmdline-tools/latest/bin $PATH
 set -x PATH $ANDROID_HOME/emulator $PATH
 set -x PATH $ANDROID_HOME/platform-tools $PATH
 set -x PATH $ANDROID_HOME/ndk/24.0.8215888 $PATH
 set -x PATH $HOME/.dotnet/tools $PATH
 
-set -x FLUTTER_HOME $SSD2/src/flutter
+set -x FLUTTER_HOME $SSD2/src/default
 set -x RUSTUP_HOME $HOME/.rustup
 set -x CARGO_HOME $HOME/.cargo
 set -x PATH $CARGO_HOME/bin $PATH
@@ -26,8 +26,6 @@ set -x PATH $XAMPP $PATH $XAMPP/bin
 set -x PATH ~/julia-1.8.5/bin $PATH
 # set -x PATH $PATH "$SSD2/Program Files/composer"
 set -x PATH $PATH $SSD2/Program
-set -x Genymotion $SSD2/Program/genymotion
-set -x PATH $PATH $Genymotion
 
 set -x LinuxApp $SSD2/LinuxApp
 set -x PATH $PATH $LinuxApp/composer
@@ -39,7 +37,7 @@ set -x PATH $PATH $ANDROID_STUDIO/bin
 
 set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
 
-set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+set -x JAVA_HOME /usr/lib/jvm/java-21-openjdk
 set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH $HOME/.pub-cache/bin
 set -x PATH $PATH $HOME/.config/composer/vendor/bin
@@ -63,3 +61,6 @@ set -x JUPYTER_RUNTIME_DIR /tmp
 
 set -x PATH $PATH $HOME/.bun/bin
 set -x PATH $HOME/.local/share/fnm $PATH
+
+# FlyEnv
+set -x PATH /home/agus/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/mailpit $PATH
