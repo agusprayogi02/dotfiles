@@ -2,7 +2,7 @@
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "bat -l 'man' -p"
 
 # path config
 source ~/.config/fish/config-linux.fish
@@ -89,6 +89,12 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
+function to_xz
+    set folder_name (string trim -r -c '/' $argv[1])
+    tar -cvJf $folder_name.tar.xz $folder_name
+    echo "Done! created file: $folder_name.tar.xz"
+end
+
 # Copy DIR1 DIR2
 function copy
     set count (count $argv | tr -d \n)
@@ -128,6 +134,7 @@ alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias upd='/usr/bin/garuda-update'
+alias mant='tldr '
 
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -176,3 +183,5 @@ zoxide init fish | source
 
 # FVM
 set --export PATH /home/agus/.fvm_flutter/bin $PATH
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
