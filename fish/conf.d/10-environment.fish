@@ -1,18 +1,18 @@
 #Custom PATH
-set -x MEDIA /mnt
-set -x SSD1 $MEDIA/Projectku
-set -x SSD2 $MEDIA/Data
+set -x MEDIA /data
+set -x SSD1 $MEDIA/Projects
+set -x SSD2 $MEDIA/Programs
 set -x HDD1 $MEDIA/HDD1
 set -x HDD2 $MEDIA/HDD2
 set -x PROKU $SSD1/ProjectKu
-set -x ANDROID_HOME $SSD2/AndroidSdk/Linux
+set -x ANDROID_HOME $SSD2/AndroidSdk
 set -x PATH $ANDROID_HOME/cmdline-tools/latest/bin $PATH
 set -x PATH $ANDROID_HOME/emulator $PATH
 set -x PATH $ANDROID_HOME/platform-tools $PATH
 set -x PATH $ANDROID_HOME/ndk/24.0.8215888 $PATH
 set -x PATH $HOME/.dotnet/tools $PATH
 
-set -x FLUTTER_HOME $SSD2/src/default
+set -x FLUTTER_HOME $SSD2/Flutter/default
 set -x RUSTUP_HOME $HOME/.rustup
 set -x CARGO_HOME $HOME/.cargo
 set -x PATH $CARGO_HOME/bin $PATH
@@ -65,5 +65,5 @@ set -x PATH $HOME/.local/share/fnm $PATH
 # FlyEnv
 set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin $PATH
 set -x PATH $GOROOT/bin $PATH
-set EDITOR lvim
-set VISUAL lvim
+set EDITOR nvim
+set VISUAL nvim

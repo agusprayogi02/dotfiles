@@ -4,9 +4,6 @@ set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "bat -l 'man' -p"
 
-# path config
-source ~/.config/fish/config-linux.fish
-
 # config functions
 source ~/.config/fish/function.fish
 
@@ -38,12 +35,6 @@ if test -d ~/Applications/depot_tools
     if not contains -- ~/Applications/depot_tools $PATH
         set -p PATH ~/Applications/depot_tools
     end
-end
-
-
-## Starship prompt
-if status --is-interactive
-   source ("starship" init fish --print-full-init | psub)
 end
 
 
@@ -109,10 +100,6 @@ end
 
 ## Useful aliases
 # Replace ls with exa
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 alias ip='ip -color'
 
@@ -151,9 +138,9 @@ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
-# Help people new to Arch
-alias apt='man pacman'
-alias apt-get='man pacman'
+# Help people new to Fedora
+alias apt='man dnf'
+alias apt-get='man dnf'
 alias please='sudo'
 alias tb='nc termbin.com 9999'
 
@@ -171,17 +158,10 @@ if status --is-interactive && type -q fastfetch
    fastfetch --load-config dr460nized
 end
 
-
-# # Jump Shell
-# jump shell fish | source
-zoxide init fish | source
-# eval (fasd --init fish)
-
 # ssh initial
 # ssh_agent_init
 # fnm env | source
 
 # FVM
-set --export PATH /home/agus/.fvm_flutter/bin $PATH
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+set --export PATH /home/agus/fvm/bin $PATH
+~/.cargo/bin/mise activate fish | source

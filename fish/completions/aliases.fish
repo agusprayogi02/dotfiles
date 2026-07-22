@@ -47,12 +47,12 @@ alias ve="virtualenv"
 # alias ll='exa -1 --color=always --group-directories-first'  # long format
 # alias ls='exa -a1 --color=always --group-directories-first' # my preferred listing
 
-# Changing "ls" to "lsd"
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ll -a'
-alias lt='ls --tree'
+# Replace ls with exa
+alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 alias lsize='du -sh * | sort -h' # show size of current folder
 alias ls.='du -sh .'
 alias lsizea='du -ah .' # show size of all files and folders
@@ -132,7 +132,6 @@ alias dils="docker image ls"
 alias drs="sudo systemctl start docker"
 
 # Git
-alias git="hub"
 alias gs="git status"
 alias agi="add-gitignore"
 alias lg="lazygit"
