@@ -144,9 +144,6 @@ alias apt-get='man dnf'
 alias please='sudo'
 alias tb='nc termbin.com 9999'
 
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
