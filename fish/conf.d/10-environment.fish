@@ -37,11 +37,11 @@ set -x PATH $PATH $ANDROID_STUDIO/bin
 
 set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
 
-set -x JAVA_HOME /usr/lib/jvm/java-25-temurin-jdk
-set -x PATH $PATH $JAVA_HOME/bin
+# set -x JAVA_HOME /usr/lib/jvm/java-25-temurin-jdk
+# set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH $HOME/.pub-cache/bin
 set -x PATH $PATH $HOME/.config/composer/vendor/bin
-set -x FVM_CACHE_PATH $SSD2/src
+set -x FVM_CACHE_PATH $SSD2/Flutter
 set -x FakeCam $HDD1/Program/Linux/WebCam/Linux-Fake-Background-Webcam
 
 set -x GOROOT /home/agus/.config/FlyEnv/env/golang
@@ -63,7 +63,7 @@ set -x PATH $PATH $HOME/.bun/bin
 set -x PATH $HOME/.local/share/fnm $PATH
 
 # FlyEnv
-set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin $PATH
+set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin /home/agus/.config/FlyEnv/env/node/bin $PATH
 set -x PATH $GOROOT/bin $PATH
 set EDITOR nvim
 set VISUAL nvim
