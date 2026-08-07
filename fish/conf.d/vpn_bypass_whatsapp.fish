@@ -2,9 +2,20 @@ status is-interactive; or return
 
 function sync_whatsapp_vpn_bypass
     set vpn_name "ecentrix_AgusPrayogi_intelix-vpn"
+
+    # Lanjut hanya jika profil VPN yang ditarget memang ada.
+    if not nmcli -t -f NAME connection show 2>/dev/null | string match -q --exact -- "$vpn_name"
+        return
+    end
     
-    # Deteksi gateway lokal dari Wi-Fi secara realtime
-    set local_gateway (nmcli dev show wlp9s0 | string match -r 'IP4.GATEWAY:\s*(.*)' | string replace -r 'IP4.GATEWAY:\s*' '')
+    # Ambil nama device Wi-Fi yang sedang connected dari output `nmcli dev`.
+    set wifi_device (nmcli -t -f DEVICE,TYPE,STATE dev | string match -r '^[^:]+:wifi:connected$' | string replace -r ':wifi:connected$' '' | head -n 1)
+
+    # Deteksi gateway lokal dari device Wi-Fi yang aktif.
+    set local_gateway ""
+    if test -n "$wifi_device"
+        set local_gateway (nmcli dev show "$wifi_device" | string match -r 'IP4.GATEWAY:\s*(.*)' | string replace -r 'IP4.GATEWAY:\s*' '')
+    end
 
     if test -n "$local_gateway"
         # Daftar IP WhatsApp Web / Meta
