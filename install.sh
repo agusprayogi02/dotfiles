@@ -11,9 +11,9 @@ done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-. distro.sh
-. packages.sh
-. helpers.sh
+source distro.sh
+source packages.sh
+source helpers.sh
 
 # Install packages in the official repositories
 # echo_info "Installing core packages..."
