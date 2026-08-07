@@ -4,7 +4,7 @@ function sync_whatsapp_vpn_bypass
     set vpn_name "ecentrix_AgusPrayogi_intelix-vpn"
     
     # Deteksi gateway lokal dari Wi-Fi secara realtime
-    set local_gateway (nmcli dev show wlp9s0 | string match -r 'IP4.GATEWAY:\s*(.*)' | string replace -r 'IP4.GATEWAY:\s*' '')
+    set local_gateway (nmcli dev show wlp1s0 | string match -r 'IP4.GATEWAY:\s*(.*)' | string replace -r 'IP4.GATEWAY:\s*' '')
 
     if test -n "$local_gateway"
         # Daftar IP WhatsApp Web / Meta
