@@ -25,3 +25,8 @@ end
 if type -q direnv
     direnv hook fish | source
 end
+
+# mise is a tool for managing multiple versions of software. It can be used to switch between different versions of programming languages, libraries, and other tools. The `mise activate fish` command activates the fish shell integration for mise, allowing you to easily switch between different versions of software while using the fish shell.
+if type -q mise
+    mise activate fish | source
+end

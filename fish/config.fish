@@ -161,7 +161,6 @@ end
 
 # FVM
 set --export PATH /home/agus/fvm/bin $PATH
-~/.cargo/bin/mise activate fish | source
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/agus/.local/bin" $PATH
