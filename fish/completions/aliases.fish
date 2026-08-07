@@ -41,18 +41,18 @@ alias pip="pip3"
 alias pi="pip3"
 alias ve="virtualenv"
 
-# Changing "ls" to "exa"
-# alias l='exa --color=always --group-directories-first'      # some files and dirs
-# alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-# alias ll='exa -1 --color=always --group-directories-first'  # long format
-# alias ls='exa -a1 --color=always --group-directories-first' # my preferred listing
+# Changing "ls" to "eza"
+# alias l='eza --color=always --group-directories-first'      # some files and dirs
+# alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+# alias ll='eza -1 --color=always --group-directories-first'  # long format
+# alias ls='eza -a1 --color=always --group-directories-first' # my preferred listing
 
-# Replace ls with exa
-# alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+# Replace ls with eza
+# alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
+alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first --icons'  # long format
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias l.='eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 alias lsize='du -sh * | sort -h' # show size of current folder
 alias ls.='du -sh .'
 alias lsizea='du -ah .' # show size of all files and folders

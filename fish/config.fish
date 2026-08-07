@@ -99,8 +99,8 @@ function copy
 end
 
 ## Useful aliases
-# Replace ls with exa
-alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+# Replace ls with eza
+alias l.='eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 alias ip='ip -color'
 
 # Aliases loaded

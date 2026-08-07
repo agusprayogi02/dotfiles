@@ -5,7 +5,7 @@
 # shellcheck source=helpers.sh
 . ../helpers.sh
 
-echo_info "Installing exa..."
-sudo apt-get install exa
+echo_info "Installing eza..."
+sudo dnf install eza
 
-echo_done "exa configuration!"
+echo_done "eza configuration!"
