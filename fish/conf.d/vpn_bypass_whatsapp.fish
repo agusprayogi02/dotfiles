@@ -4,7 +4,7 @@ function sync_whatsapp_vpn_bypass
     set vpn_name "ecentrix_AgusPrayogi_intelix-vpn"
 
     # Lanjut hanya jika profil VPN yang ditarget memang ada.
-    if not nmcli -t -f NAME connection show 2>/dev/null | string match -q --exact -- "$vpn_name"
+    if not nmcli -t -f NAME connection show 2>/dev/null | string match -q -- "$vpn_name"
         return
     end
     
