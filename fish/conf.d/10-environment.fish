@@ -63,7 +63,7 @@ set -x PATH $PATH $HOME/.bun/bin
 set -x PATH $HOME/.local/share/fnm $PATH
 
 # FlyEnv
-set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin /home/agus/.config/FlyEnv/env/node/bin $PATH
+set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/composer /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin /home/agus/.config/FlyEnv/env/node/bin $PATH
 set -x PATH $GOROOT/bin $PATH
 set EDITOR nvim
 set VISUAL nvim
