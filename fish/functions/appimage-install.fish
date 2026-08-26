@@ -154,6 +154,7 @@ function appimage-install
     set -l METADATA_COMMENT ""
     set -l METADATA_CATEGORIES "Utility"
     set -l METADATA_ICON ""
+    set -l METADATA_WMCLASS ""
 
     if test -n "$DESKTOP_SOURCE"; and test -f "$DESKTOP_SOURCE"
 
@@ -172,10 +173,19 @@ function appimage-install
             set METADATA_CATEGORIES "$value"
         end
 
+        set value (sed -n 's/^StartupWMClass=//p' "$DESKTOP_SOURCE" | head -n 1)
+        if test -n "$value"
+            set METADATA_WMCLASS "$value"
+        end
+
         set value (sed -n 's/^Icon=//p' "$DESKTOP_SOURCE" | head -n 1)
         if test -n "$value"
             set METADATA_ICON "$value"
         end
+    end
+
+    if test -z "$METADATA_WMCLASS"
+        set METADATA_WMCLASS (string lower "$APPNAME")
     end
 
     # ============================================================
@@ -314,6 +324,8 @@ function appimage-install
 
     set -l ICON_DEST ""
     set -l ICON_NAME ""
+    set -l ICON_REF ""
+    set -l THEME_ICON_PATH ""
 
     if test -n "$ICON_SOURCE"; and test -f "$ICON_SOURCE"
 
@@ -323,10 +335,49 @@ function appimage-install
             set ICON_EXT ".png"
         end
 
-        set ICON_NAME "$APPNAME$ICON_EXT"
+        set ICON_REF (string replace -a ' ' '-' "$APPNAME")
+        set ICON_NAME "$ICON_REF$ICON_EXT"
         set ICON_DEST "$ICON_DIR/$ICON_NAME"
 
         cp "$ICON_SOURCE" "$ICON_DEST"
+
+        set -l HICOLOR_DIR "$HOME/.local/share/icons/hicolor"
+        set -l THEME_SUBDIR ""
+
+        if test "$ICON_EXT" = ".svg"
+            set THEME_SUBDIR "scalable/apps"
+        else
+            set -l PX 512
+            set -l DIMS (identify -format "%w %h" "$ICON_SOURCE" 2>/dev/null)
+
+            if test (count $DIMS) -ne 2
+                set -l M (string match -r '(\d+) x (\d+)' (file -b "$ICON_SOURCE" 2>/dev/null))
+                if set -q M[3]
+                    set DIMS "$M[2]" "$M[3]"
+                end
+            end
+
+            if test (count $DIMS) -eq 2
+                set -l px $DIMS[1]
+                if test $DIMS[2] -gt $px
+                    set px $DIMS[2]
+                end
+
+                for s in 16 24 32 48 64 96 128 256 512
+                    if test $px -le $s
+                        set PX $s
+                        break
+                    end
+                end
+            end
+
+            set THEME_SUBDIR $PX"x"$PX"/apps"
+        end
+
+        mkdir -p "$HICOLOR_DIR/$THEME_SUBDIR"
+        cp "$ICON_SOURCE" "$HICOLOR_DIR/$THEME_SUBDIR/$ICON_NAME"
+
+        set THEME_ICON_PATH "$HICOLOR_DIR/$THEME_SUBDIR/$ICON_NAME"
 
         echo "Icon: $ICON_DEST"
 
@@ -358,12 +409,26 @@ function appimage-install
         sed -i "s|^Exec=.*|Exec=$APPIMAGE_DEST|" "$DESKTOP_FILE"
 
         # Update icon if available
-        if test -n "$ICON_DEST"
+        if test -n "$ICON_REF"
 
             if grep -q '^Icon=' "$DESKTOP_FILE"
-                sed -i "s|^Icon=.*|Icon=$ICON_DEST|" "$DESKTOP_FILE"
+                sed -i "s|^Icon=.*|Icon=$ICON_REF|" "$DESKTOP_FILE"
             else
-                printf '\nIcon=%s\n' "$ICON_DEST" >> "$DESKTOP_FILE"
+                printf '\nIcon=%s\n' "$ICON_REF" >> "$DESKTOP_FILE"
+            end
+        end
+
+        if grep -q '^StartupWMClass=' "$DESKTOP_FILE"
+            sed -i "s|^StartupWMClass=.*|StartupWMClass=$METADATA_WMCLASS|" "$DESKTOP_FILE"
+        else
+            printf '\nStartupWMClass=%s\n' "$METADATA_WMCLASS" >> "$DESKTOP_FILE"
+        end
+
+        if test -n "$THEME_ICON_PATH"
+            if grep -q '^X-Icon-Path=' "$DESKTOP_FILE"
+                sed -i "s|^X-Icon-Path=.*|X-Icon-Path=$THEME_ICON_PATH|" "$DESKTOP_FILE"
+            else
+                printf '\nX-Icon-Path=%s\n' "$THEME_ICON_PATH" >> "$DESKTOP_FILE"
             end
         end
 
@@ -384,9 +449,14 @@ function appimage-install
             echo "Terminal=false"
             echo "Type=Application"
             echo "Categories=$METADATA_CATEGORIES"
+            echo "StartupWMClass=$METADATA_WMCLASS"
 
-            if test -n "$ICON_DEST"
-                echo "Icon=$ICON_DEST"
+            if test -n "$ICON_REF"
+                echo "Icon=$ICON_REF"
+            end
+
+            if test -n "$THEME_ICON_PATH"
+                echo "X-Icon-Path=$THEME_ICON_PATH"
             end
         end > "$DESKTOP_FILE"
 
@@ -399,6 +469,16 @@ function appimage-install
 
     if type -q update-desktop-database
         update-desktop-database "$DESKTOP_DIR" >/dev/null 2>&1
+    end
+
+    if type -q gtk-update-icon-cache
+        gtk-update-icon-cache -f -i -t "$HOME/.local/share/icons/hicolor" >/dev/null 2>&1
+    end
+
+    if type -q kbuildsycoca6
+        kbuildsycoca6 >/dev/null 2>&1
+    else if type -q kbuildsycoca5
+        kbuildsycoca5 >/dev/null 2>&1
     end
 
     # ============================================================
@@ -437,6 +517,7 @@ function appimage-install
         echo "  Icon:        Not found"
     end
 
+    echo "  WMClass:     $METADATA_WMCLASS"
     echo "  Category:    $METADATA_CATEGORIES"
     echo "  Description: $METADATA_COMMENT"
     echo "  Desktop:     $DESKTOP_FILE"

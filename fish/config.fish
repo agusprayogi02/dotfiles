@@ -164,3 +164,6 @@ set --export PATH /home/agus/fvm/bin $PATH
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/agus/.local/bin" $PATH
+if status is-interactive
+    atuin init fish | source
+end
