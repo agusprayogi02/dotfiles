@@ -1,4 +1,5 @@
 #Custom PATH
+set -x TASK_EXE go-task
 set -x MEDIA /data
 set -x SSD1 $MEDIA/Projects
 set -x SSD2 $MEDIA/Programs

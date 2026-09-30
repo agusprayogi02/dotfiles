@@ -221,3 +221,5 @@ alias wireOn="sudo wg-quick up wgcf-profile"
 
 alias touchpadOff="xinput set-int-prop 'ETPS/2 Elantech Touchpad' 'Device Enabled' 8 0"
 alias touchpadOnn="xinput set-int-prop 'ETPS/2 Elantech Touchpad' 'Device Enabled' 8 1"
+
+alias task="go-task"

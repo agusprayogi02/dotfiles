@@ -30,3 +30,7 @@ end
 if type -q mise
     mise activate fish | source
 end
+
+if type -q go-task
+    go-task --completion fish | source
+end
