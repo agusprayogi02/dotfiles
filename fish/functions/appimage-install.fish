@@ -6,7 +6,23 @@ function appimage-install
     set -l APPIMAGE_DIR "/data/Programs/AppImages"
     set -l ICON_DIR "$APPIMAGE_DIR/icons"
     set -l DESKTOP_DIR "$HOME/.local/share/applications"
-
+    
+    # ============================================================
+    # Detect Desktop Environment (DE)
+    # ============================================================
+    # XDG_CURRENT_DESKTOP may contain a colon-separated list.
+    set -l CURRENT_DE (string split ':' $XDG_CURRENT_DESKTOP)
+    set -l IS_GNOME false
+    set -l IS_KDE false
+    for de in $CURRENT_DE
+        if string match -ri 'gnome|unity|cinnamon|mate|xfce|lxde|deepin' $de
+            set IS_GNOME true
+        end
+        if string match -ri 'kde|plasma' $de
+            set IS_KDE true
+        end
+    end
+    
     # ============================================================
     # Validate arguments
     # ============================================================
@@ -47,6 +63,9 @@ function appimage-install
     if test -z "$APPNAME"
         set APPNAME "$ORIGINAL_NAME"
     end
+    # Replace spaces with hyphens for safe filenames and identifiers
+    set -l SAFE_APPNAME (string replace -a ' ' '-' "$APPNAME")
+    set APPNAME "$SAFE_APPNAME"
 
     set -l APPIMAGE_NAME "$APPNAME.AppImage"
 
@@ -406,22 +425,23 @@ function appimage-install
         echo "  $DESKTOP_FILE"
 
         # Update executable path
-        sed -i "s|^Exec=.*|Exec=$APPIMAGE_DEST|" "$DESKTOP_FILE"
+        sed -i "s|^Exec=.*|Exec=$APPIMAGE_DEST %u|" "$DESKTOP_FILE"
 
-        # Update icon if available
-        if test -n "$ICON_REF"
-
-            if grep -q '^Icon=' "$DESKTOP_FILE"
-                sed -i "s|^Icon=.*|Icon=$ICON_REF|" "$DESKTOP_FILE"
-            else
-                printf '\nIcon=%s\n' "$ICON_REF" >> "$DESKTOP_FILE"
-            end
-        end
-
+        # Update or add StartupWMClass so panel matches the window to this desktop entry
         if grep -q '^StartupWMClass=' "$DESKTOP_FILE"
             sed -i "s|^StartupWMClass=.*|StartupWMClass=$METADATA_WMCLASS|" "$DESKTOP_FILE"
         else
             printf '\nStartupWMClass=%s\n' "$METADATA_WMCLASS" >> "$DESKTOP_FILE"
+        end
+
+        # Update icon if available
+        if test -n "$ICON_DEST"
+
+            if grep -q '^Icon=' "$DESKTOP_FILE"
+                sed -i "s|^Icon=.*|Icon=$ICON_DEST|" "$DESKTOP_FILE"
+            else
+                printf '\nIcon=%s\n' "$ICON_DEST" >> "$DESKTOP_FILE"
+            end
         end
 
         if test -n "$THEME_ICON_PATH"
@@ -445,7 +465,7 @@ function appimage-install
             echo "[Desktop Entry]"
             echo "Name=$METADATA_NAME"
             echo "Comment=$METADATA_COMMENT"
-            echo "Exec=$APPIMAGE_DEST"
+            echo "Exec=$APPIMAGE_DEST %u"
             echo "Terminal=false"
             echo "Type=Application"
             echo "Categories=$METADATA_CATEGORIES"
