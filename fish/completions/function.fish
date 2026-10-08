@@ -90,3 +90,19 @@ function cd
     end
 end
 
+function lszsort
+    if test (count $argv) -eq 0
+        echo "Tolong tambahkan parameter integer di bagian terakhir. Contoh: lszsort 10"
+    else
+        du -sh * | sort -hr | head -n $argv[1]
+    end
+end
+
+function search
+    if test (count $argv) -eq 0
+        echo "Tolong masukkan kata yang ingin dicari. Contoh: cari 'password'"
+    else
+        # rg -n (menampilkan nomor baris), -i (case insensitive/mengabaikan huruf besar-kecil)
+        rg -n -i $argv
+    end
+end

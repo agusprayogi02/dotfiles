@@ -59,7 +59,6 @@ alias ls.='du -sh .'
 alias lsizea='du -ah .' # show size of all files and folders
 alias lcount="ls -1 | wc -l"
 
-
 alias cp="cp -i" # confirm before overwriting something
 alias df='df -h' # human-readable sizes
 alias grep='grep --colour=auto'
