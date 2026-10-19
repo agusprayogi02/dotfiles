@@ -33,7 +33,7 @@ set -x PATH $PATH $LinuxApp/composer
 set -x PATH $PATH $LinuxApp/apache-maven/bin
 set -x PATH $PATH $LinuxApp/blender
 set -x PATH $PATH $LinuxApp/NetBeans-14/netbeans/bin
-set -x ANDROID_STUDIO /home/agus/.local/share/JetBrains/Toolbox/apps/android-studio
+set -x ANDROID_STUDIO /data/Programs/Jetbrains/android-studio
 set -x PATH $PATH $ANDROID_STUDIO/bin
 
 set -x PATH $PATH $HOME/.local/share/JetBrains/Toolbox/scripts
@@ -50,7 +50,7 @@ set -x GOPATH $HOME/go
 set -x PATH $PATH $GOROOT/bin
 set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH $HOME/.local/bin
-set -x PATH $PATH $HDD1/Program/genymotion
+set -x PATH $PATH /data/Containers/Genymotion/genymotion
 #set -x PATH (yarn global bin) $PATH
 set -x PATH ~/.npm-global/bin $PATH
 
