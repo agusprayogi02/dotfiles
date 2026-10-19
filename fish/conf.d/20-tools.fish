@@ -34,3 +34,13 @@ end
 if type -q go-task
     go-task --completion fish | source
 end
+
+## Run fastfetch if session is interactive
+if not type -q fastfetch
+    echo "fastfetch belum terpasang, menginstall via dnf..."
+    sudo dnf install -y fastfetch
+end
+
+if type -q fastfetch
+    fastfetch
+end

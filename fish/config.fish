@@ -149,11 +149,6 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-## Run fastfetch if session is interactive
-if status --is-interactive && type -q fastfetch
-    fastfetch --load-config dr460nized
-end
-
 # ssh initial
 # ssh_agent_init
 # fnm env | source
