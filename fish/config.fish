@@ -164,3 +164,6 @@ end
 
 set -gx DOCKER_HOST "unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 set -gx TESTCONTAINERS_RYUK_DISABLED true
+
+# Hermes Agent command
+fish_add_path "$HOME/.local/bin"
