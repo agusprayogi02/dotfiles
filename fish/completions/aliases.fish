@@ -49,9 +49,9 @@ alias ve="virtualenv"
 
 # Replace ls with eza
 # alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
-alias la='eza -a --color=always --group-directories-first --icons=always'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first --icons=always'  # long format
-alias l='eza -l --color=always --group-directories-first --icons=always'  # long format
+alias la='eza -a --color=always --group-directories-first --icons=always' # all files and dirs
+alias ll='eza -l --color=always --group-directories-first --icons=always' # long format
+alias l='eza -l --color=always --group-directories-first --icons=always' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
 alias l.='eza -ald --color=always --group-directories-first --icons=always .*' # show only dotfiles
 alias lsize='du -sh * | sort -h' # show size of current folder
@@ -222,3 +222,5 @@ alias touchpadOff="xinput set-int-prop 'ETPS/2 Elantech Touchpad' 'Device Enable
 alias touchpadOnn="xinput set-int-prop 'ETPS/2 Elantech Touchpad' 'Device Enabled' 8 1"
 
 alias task="go-task"
+alias dload="aria2c"
+alias systui="systemctl-tui"
