@@ -6,6 +6,12 @@ if not status is-interactive
     return
 end
 
+# Dir instalasi user-level masuk PATH SEBELUM cek tool: conf.d ini jalan sebelum
+# *.env.fish (mis. atuin.env.fish dari installer atuin) yang biasanya menambah PATH.
+for __d in ~/.local/bin ~/.atuin/bin ~/.cargo/bin ~/.bun/bin
+    test -d $__d; and not contains -- $__d $PATH; and set -gx PATH $__d $PATH
+end
+
 # Install helper: pakai repo Fedora (dnf) kalau tersedia, selain itu installer resmi upstream.
 # ponytail: install jalan sinkron saat shell start & tanpa cache "sudah gagal"; kalau gagal
 # (mis. sudo dibatalkan) akan dicoba lagi di shell berikutnya. Pindah ke `make install` kalau mengganggu.
