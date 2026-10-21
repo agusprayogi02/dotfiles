@@ -66,5 +66,28 @@ set -x PATH $HOME/.local/share/fnm $PATH
 # FlyEnv
 set -x PATH $HOME/.config/FlyEnv/alias /home/agus/.config/FlyEnv/env/composer /home/agus/.config/FlyEnv/env/rust/bin /home/agus/.config/FlyEnv/env/bun /home/agus/.config/FlyEnv/env/caddy /home/agus/.config/FlyEnv/env/mailpit /home/agus/.config/FlyEnv/env/mysql /home/agus/.config/FlyEnv/env/mysql/bin /home/agus/.config/FlyEnv/env/nginx /home/agus/.config/FlyEnv/env/nginx/sbin /home/agus/.config/FlyEnv/env/php /home/agus/.config/FlyEnv/env/php/bin /home/agus/.config/FlyEnv/env/postgresql /home/agus/.config/FlyEnv/env/postgresql/bin /home/agus/.config/FlyEnv/env/redis /home/agus/.config/FlyEnv/env/redis/bin /home/agus/.config/FlyEnv/env/maven/bin /home/agus/.config/FlyEnv/env/node/bin $PATH
 set -x PATH $GOROOT/bin $PATH
+
+# Node dari nvm (alias default) — menang atas node FlyEnv. Resolve chain: default → lts/* → lts/krypton → vX
+if test -d ~/.nvm/versions/node
+    set -l __nv (string trim < ~/.nvm/alias/default 2>/dev/null)
+    set -l __i 0
+    while string match -q -- '*/*' "$__nv"; and test $__i -lt 5
+        set __nv (string trim < ~/.nvm/alias/$__nv 2>/dev/null)
+        set __i (math $__i + 1)
+    end
+    set -l __nb
+    test -x "$HOME/.nvm/versions/node/$__nv/bin/node"; and set __nb $HOME/.nvm/versions/node/$__nv/bin
+    # alias default hilang/kosong → pakai versi terpasang tertinggi
+    if not set -q __nb[1]
+        set -l __all (ls -d $HOME/.nvm/versions/node/*/bin 2>/dev/null | sort -V)
+        test -n "$__all"; and set __nb $__all[-1]
+    end
+    if set -q __nb[1]
+        # buang entri node nvm lama dari PATH warisan agar tidak menumpuk
+        set -x PATH (string match -v -r "^$HOME/.nvm/versions/node/[^/]+/bin\$" $PATH)
+        set -x PATH $__nb $PATH
+    end
+end
+
 set EDITOR nvim
 set VISUAL nvim

@@ -23,7 +23,7 @@ __ensure_tool starship "starship.rs (official install script)" \
 __ensure_tool zoxide "repo resmi Fedora" 'sudo dnf install -y zoxide'
 
 # Advanced shell history
-__ensure_tool atuin "repo resmi Fedora" 'sudo dnf install -y atuin'
+__ensure_tool atuin "repo resmi Fedora" "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive"
 
 # Per-project environment variables
 __ensure_tool direnv "repo resmi Fedora" 'sudo dnf install -y direnv'

@@ -89,8 +89,24 @@ function install-tools --description "Install semua tool dev dari sumber resmi (
     end
     if test -s ~/.nvm/nvm.sh
         echo "→ nodejs LTS (nvm)"
-        bash -c 'export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm install --lts'
+        bash -c 'export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm install --lts && nvm alias default "lts/*"'
         or set -a failed nodejs
+    end
+
+    # --- bat / eza / aria2 (repo resmi Fedora, satu dnf call) ---
+    set -l rpms
+    type -q bat; or set -a rpms bat
+    type -q eza; or set -a rpms eza
+    type -q aria2c; or set -a rpms aria2
+    if set -q rpms[1]
+        echo "→ $rpms (dnf)"
+        sudo dnf install -y $rpms; or set -a failed $rpms
+    end
+
+    # --- ast-grep via bun (@ast-grep/cli, resmi npm) ---
+    if type -q bun; and not type -q ast-grep
+        echo "→ ast-grep (bun -g @ast-grep/cli)"
+        bun install -g @ast-grep/cli; or set -a failed ast-grep
     end
 
     if set -q failed[1]
