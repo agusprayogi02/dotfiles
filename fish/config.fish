@@ -167,3 +167,6 @@ set -gx TESTCONTAINERS_RYUK_DISABLED true
 
 # Hermes Agent command
 fish_add_path "$HOME/.local/bin"
+
+# Ghidra (REA provider)
+set -gx GHIDRA_INSTALL_DIR /data/Programs/ghidra_12.1.4_PUBLIC
